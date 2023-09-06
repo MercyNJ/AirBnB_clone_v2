@@ -1,4 +1,5 @@
 0x02. AirBnB clone - MySQL
+0x03. AirBnB clone - Deploy static
 
 <center> <h1>HBNB - The Console</h1> </center>
 
