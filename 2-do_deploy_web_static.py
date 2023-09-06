@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""This is a fabric script that distributes an archive to your web servers"""
+"""This is a fabric script that distributes an archive to my web servers"""
 
 from datetime import datetime
 from fabric.api import *
 import os
 
-env.hosts = ["100.26.225.174", "18.209.224.170"]
-env.user = "ubuntu"
+env.hosts = ['100.25.197.219', '18.214.89.4']
+env.user = 'ubuntu'
+env.key_filename = '~/.ssh/id_rsa'
 
 
 def do_pack():
