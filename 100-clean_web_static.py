@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-""" A function that deploys """
+""" A function that deletes out-of-date archives. """
+
 from fabric.api import *
 
 
-env.hosts = ['100.26.225.174', '18.209.224.170']
+env.hosts = ['100.25.197.219', '18.214.89.4']
 env.user = "ubuntu"
 
 
 def do_clean(number=0):
-    """ CLEANS """
+    """ CLEANS out of date archives"""
 
     number = int(number)
 
