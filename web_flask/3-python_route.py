@@ -1,37 +1,39 @@
 #!/usr/bin/python3
-"""This Script that starts a Flask web application """
+"""A Script that starts a Flask web application """
+
 from flask import Flask
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """ Print Web """
-    return 'Hello HBNB!'
+    """print given message"""
+    return ('Hello HBNB!')
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """ Print Web """
-    return 'HBNB'
+    """Prints hbnb"""
+    return ('HBNB')
 
 
-@app.route('/c/<text>')
-def c_is_fun(text):
-    """This Print a char C followed by the value of the text variable """
-    return 'C {}'.format(text.replace('_', ' '))
+@app.route('/c/<text>', strict_slashes=False)
+def c_route(text):
+    """Displays C then value of text var"""
+    text = text.replace('_', ' ')
+    return ('C {}'.format(text))
 
 
-@app.route('/python')
-@app.route('/python/<text>')
-def python_is_cool(text='is cool'):
-    """This Print Python, followed by the value of the text variable,
-    with default value of text: is cool"""
+@app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
+def display_python_txt(text='is cool'):
+    """
+    Displays python then value of var text.
+    Default value is is cool.
+    """
     return 'Python {}'.format(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
