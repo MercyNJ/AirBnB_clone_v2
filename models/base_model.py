@@ -37,9 +37,11 @@ class BaseModel:
                 continue
             setattr(self, key, value)
             if type(self.created_at) is str:
-                self.created_at = datetime.strptime(self.created_at, format_time)
+                self.created_at = datetime.strptime(
+                        self.created_at, format_time)
             if type(self.updated_at) is str:
-                self.updated_at = datetime.strptime(self.updated_at, format_time)
+                self.updated_at = datetime.strptime(
+                        self.updated_at, format_time)
 
     def __str__(self):
         """String representation of the BaseModel class"""
