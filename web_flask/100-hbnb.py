@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Starts a Flask web application. Listens on 0.0.0.0  on port 5000.
+Starts a Flask web appl. Listens on 0.0.0.0  on port 5000.
 Routes:*  /hbnb: Display the HTML page for hbnb home page.
 """
+
 from flask import Flask
 from flask import render_template
 from models import storage
@@ -13,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """This Display the HTML page for hbnb home page."""
+    """Displays the HTML page for hbnb home page."""
     amenities = storage.all("Amenity")
     places = storage.all("Place")
     states = storage.all("State")
@@ -25,9 +26,10 @@ def hbnb():
 
 @app.teardown_appcontext
 def teardown(excpt=None):
-    """This Removes the current SQLAlchemy Session."""
+    """Closes the current SQLAlchemy Session."""
     storage.close()
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    storage.reload()
+    app.run(host='0.0.0.0', port=5000, debug=True)
