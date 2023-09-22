@@ -16,6 +16,8 @@ from os import getenv
 
 if getenv("HBNB_TYPE_STORAGE") == "db":
     storage = DBStorage()
+    BaseModel.storage_type = "db"
 else:
     storage = FileStorage()
+    BaseModel.storage_type = "file_storage"
 storage.reload()
