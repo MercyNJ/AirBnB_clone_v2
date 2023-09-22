@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-This Starts a Flask web application. Listens on 0.0.0.0  on port 5000.
+Starts a Flask web appl. Listens on 0.0.0.0  on port 5000.
 Routes:    * /hbnb_filters: HBnB HTML filters page.
 """
+
 from flask import Flask
 from flask import render_template
 from models import storage
@@ -21,9 +22,10 @@ def hbnb_filters():
 
 @app.teardown_appcontext
 def teardown(excpt=None):
-    """Remove the current SQLAlchemy Session."""
+    """Closes current SQLAlchemy Session."""
     storage.close()
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    storage.reload()
+    app.run(host='0.0.0.0', port=5000, debug=True)
