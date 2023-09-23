@@ -69,8 +69,7 @@
 						</div>
 					</div>
 					<div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
-					<div class="description">{{ place.description|safe }}
-                    </div>
+					<div class="description">{{ place.description|safe }}</div>
 				</article>
 				<article>
 					<div class="headline">
@@ -78,22 +77,21 @@
 						<div class="price_by_night">&#36;{{ place.price_by_night }}</div>
 					</div>
 					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>{{ place.max_guest }} Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>{{ place.number_rooms }} Rooms</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>{{ place.number_bathrooms }} Bathrooms</p>
-                        </div>
-                    </div>
+						<div class="max_guest">
+							<div class="guest_icon"></div>
+							<p>{{ place.max_guest }} Guests</p>
+						</div>
+					        <div class="number_rooms">
+                                                        <div class="bed_icon"></div>
+                                                        <p>{{ place.number_rooms }} Rooms</p>
+                                                </div>
+                                                <div class="number_bathrooms">
+                                                        <div class="bath_icon"></div>
+                                                        <p>{{ place.number_bathrooms }} Bathrooms</p>
+                                                </div>
+                                        </div>
 					<div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
-					<div class="description">{{ place.description|safe }}
-                    </div>
+					<div class="description">{{ place.description|safe }}</div>
 				</article>
 				<article>
 					<div class="headline">
@@ -101,22 +99,23 @@
 						<div class="price_by_night">&#36;{{ place.price_by_night }}</div>
 					</div>
 					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>{{ place.max_guest }} Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>{{ place.number_rooms }} Rooms</p>
-                        </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>{{ place.number_bathrooms }} Bathrooms</p>
-                        </div>
-                    </div>
-		    <div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
-		    <div class="description">{{ place.description|safe }}</div>
+                                                <div class="max_guest">
+                                                        <div class="guest_icon"></div>
+                                                        <p>{{ place.max_guest }} Guests</p>
+                                                </div>
+                                                <div class="number_rooms">
+                                                        <div class="bed_icon"></div>
+                                                        <p>{{ place.number_rooms }} Rooms</p>
+                                                </div>
+                                                <div class="number_bathrooms">
+                                                        <div class="bath_icon"></div>
+                                                        <p>{{ place.number_bathrooms }} Bathrooms</p>
+                                                </div>
+                                        </div>
+		                        <div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
+		                        <div class="description">{{ place.description|safe }}</div>
 				</article>
+				{% endfor %}
 			</section>
 		</div>
 		<footer>
