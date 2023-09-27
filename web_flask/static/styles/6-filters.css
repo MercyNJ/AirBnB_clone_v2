@@ -7,7 +7,7 @@
 	border-radius: 4px;
 }
 
-.locations {
+.amenities, .locations {
 	display: inline;
 	vertical-align: middle;
 	float: left;
@@ -46,6 +46,10 @@
 
 .locations:hover .popover {
 	display: inline-block;
+}
+
+.amenities:hover .popover {
+        display: inline-block;
 }
 
 .filter_amenities:hover .popover {
